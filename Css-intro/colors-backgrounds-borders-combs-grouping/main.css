@@ -1,0 +1,35 @@
+body{
+  background-image: url(akira.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+}
+
+.container{
+  background: linear-gradient(to right, slateblue,hotpink);
+  box-shadow: 6px 6px 4px black;
+}
+h1, h2, h3, .classOne, #id1{
+  color: blue;
+  text-shadow: 5px 5px 5px hotpink;
+  text-align: center;
+  line-height:1rem;
+  font-family: sans-serif;
+}
+
+.borderImg{
+  border: 4px solid blue;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+ul li {
+  color: white;
+  font-size: 20px;
+}
+
+ul > li {
+  color: yellow;
+}

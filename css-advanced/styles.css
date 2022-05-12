@@ -1,0 +1,146 @@
+
+/* ##################### DEFAULTS#####################*/ */
+/*take nav headers and footer and display it as block*/
+nav,
+header,
+footer {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    /*assure that everything is sucked to edges since browsers
+    like to add their own padding and margins*/
+    margin: 0;
+}
+
+.container {
+    /* we  want it to take up full display whter deskor mobile */
+    width:100%;
+    /* will see if there is extra space and evenly distribute in container to center everything */
+    margin: auto;
+    padding-top: 4%;
+    padding-bottom: 4%;
+
+}
+
+.row{
+    width: 100%;
+    /* we want the row to flex as screen changes size */
+    display: flex;
+    /* as screen gets smaller the content gets wrapped */
+    flex-wrap: wrap;
+    /* helps takes elements in flex containter to ceenter the content out */
+    align-items: center;
+}
+
+.row::after{
+    display: table;
+    clear: both;
+    content: "";
+}
+
+/* ##################### Nav bar #####################*/
+nav {
+    width: 100%;
+    /* suck this element edge to edge */
+    margin: 0;
+}
+
+/*  */
+nav ul {
+    background-color: #eee;
+    /* to make sure not scrolling in nav bar */
+    /* prevent scrolling side to side on mobile resp web page */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* styling the lists */
+ul.topnav li {
+    /* assure it does not add those bullet points */
+    list-style: none;
+    float: left;
+}
+
+ul.topnav li.topnav-right {
+    /* assure it does not add those bullet points */
+    float: right;
+}
+
+ul.topnav li a {
+    display: block;
+    text-decoration: none;
+    /* as browser shrinks min will always be 16 px */
+    min-height: 16px;
+    text-align: center;
+    padding: 14px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+/* to create an action a:hover */
+ul.topnav li a:hover {
+    background-color: #0080ff;
+    color: white;
+}
+
+ul.topnav li.dropDownIcon{
+    display: none;
+}
+
+/* ### CUSTOM STYLES ### */
+
+#section-1-gradient{
+    background: blue;
+    background: -webkit-linear-gradient(blue,rgb(33, 33, 71));
+    background: -o-linear-gradient(blue,rgb(33, 33, 71));
+    background: -moz-linear-gradient(blue,rgb(33, 33, 71));
+    background: linear-gradient(blue,rgb(33, 33, 71));
+
+}
+
+
+/* ############# Mobile #############*/
+/* we want the list items to be hidden in mobile
+create media query to detect width of display
+once it detects it will create new props */
+
+
+/* will be hidden once the width is 680px or less 
+except the child number of 1 which is the first list item "home"*/
+@media screen and (max-width: 680px) {
+    ul.topnav li:not(:nth-child(1)) {display: none;}
+
+    /* element dropdown icon took down the float property from desktop
+    we want if off to the right so we need to write that prop again */
+    ul.topnav li.dropDownIcon {
+        display: block;
+        float: right;
+    }
+    /* preventing the trigram icon from moving anywhere */
+    ul.topnav.responsive li.dropDownIcon{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    /* we want to use js to click on trigram to create the dropdown list
+    js will interact with the unordered list */
+    ul.topnav.responsive {
+        position: relative;
+    }
+
+    ul.topnav.responsive li {
+        /* line all the list items in a row up */
+        display: inline;
+        /* override the prev float prop from desktop */
+        float: none;
+    }
+
+    ul.topnav.responsive li a {
+        /* stack them on top of each other w. block */
+        display: block;
+        text-align: left;
+    }
+}

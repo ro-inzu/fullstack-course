@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+# docs
+/Docs
+/practice-1/
+/practice-1
