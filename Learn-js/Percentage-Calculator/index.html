@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h1>Percentage Calculators</h1>
     </head>
     <body>
-        <p>X is what % of Y</p>
+        <div>
+            <h1>Percentage Calculators</h1>
+            <p>X is what % of Y</p>
         <!-- default behavior of form submission will refresh immediately -->
         <!-- to turn off the feature add event.preventDefault(); -->
         <form id = "percent_form">
@@ -14,6 +15,20 @@
         </form>
         <h3 id = "result_field"></h3>
         <script type = "text/javascript" src="javascript/calc.js"></script>
+
+        </div>
+        <!-- pw gen -->
+        <div>
+            <h1>Password generator</h1>
+            <p>Generate a password</p>
+        <!-- default behavior of form submission will refresh immediately -->
+        <!-- to turn off the feature add event.preventDefault(); -->
+        <form id = "password_form">
+            <input type = "submit" value="Generate">
+        </form>
+        <p id = "pw_field"></p>
+        <script type = "text/javascript" src="javascript/pw.js"></script>
+        </div>
 
     </body>
 </html>
